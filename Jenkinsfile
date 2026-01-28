@@ -1,19 +1,15 @@
 pipeline {
 	agent any
-
-	triggers{
-		cron('* * * * *')
-	}
 	
 	environment {
 		DOCKERHUB_CRED=credentials('dockerhub')
-		IMAGE_NAME="rohit2686/maven"
+		IMAGE_NAME="prozpek/mvn"
 	}
 	
 	stages {
 		stage('checkout') {
 			steps {
-				git url:'https://github.com/1ms24mc087/maven', branch:'master'
+				git url:'https://github.com/Rjiv07/mvn', branch:'main'
 			}
 		}
 
